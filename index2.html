@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- Add Swiper JS here -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <style>
   @font-face {
     font-family: 'FF Shamel';
@@ -160,12 +160,12 @@
         <!-- Navigation -->
        <nav class="hidden md:flex space-x-6 space-x-reverse text-sm font-semibold mr-64">
   <a href="/index2.html" class="hover:text-[#A68A64] text-[#3D3D3D] transition  border-[#A68A64] border-b-2 pb-1">الصفحة الرئيسية</a>
-  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">البرامج / الآلات الموسيقية</a>
+  <a href="/programs.html" class="hover:text-[#A68A64] text-[#3D3D3D] transition">البرامج / الآلات الموسيقية</a>
   <!-- <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">المدرسون</a>
   <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">فريق العمل الإداري</a> -->
   <a href="/events.html" class="hover:text-[#A68A64] text-[#3D3D3D] transition ">الاحداث </a>
-  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">من نحن</a>
-  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">تواصل معنا</a>
+  <a href="/about.html" class="hover:text-[#A68A64] text-[#3D3D3D] transition">من نحن</a>
+  <a href="/contact.html" class="hover:text-[#A68A64] text-[#3D3D3D] transition">تواصل معنا</a>
   <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">التقديم على البرامج</a>
   <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">
   EN 
@@ -213,7 +213,7 @@
 
   <section class="py-20 bg-white relative overflow-hidden">
   <!-- خلفية زخرفية خفيفة -->
-  <div class="absolute inset-0 bg-[url('images/footer5.png')] bg-contain bg-no-repeat bg-bottom opacity-10 pointer-events-none"></div>
+  <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('images/footer.png');"></div>
   <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8 md:gap-12 relative z-10">
     <!-- قسم الصورة -->
     <div class="w-full md:w-1/2 animate-fade-in">
@@ -233,7 +233,7 @@
       <p class="text-[#6B7280] text-sm md:text-base leading-relaxed mb-6 max-w-lg">
         بيت العود هو مركز متخصص في تعليم العزف على آلة العود والآلات الموسيقية الشرقية، ويقدم برامج تدريبية احترافية تحت إشراف نخبة من المعلمين ذوي الخبرة. نحن نؤمن بأهمية الحفاظ على التراث الموسيقي ونقله للأجيال القادمة بأسلوب عصري.
       </p>
-      <a href="#" class="inline-block bg-[#A68A64] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300">
+      <a href="/about.html" class="inline-block bg-[#A68A64] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300">
         اقرأ المزيد
       </a>
     </div>
@@ -243,7 +243,10 @@
   <!-- قسم برامجنا -->
   <section class="py-16 bg-[#F5F5F5]">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-12 animate-slide-up">برامجنا</h2>
+        <h2 class="text-2xl md:text-4xl font-bold text-[#3D3D3D] mb-12 animate-slide-up relative inline-block">
+      البرامح / الآلات الموسيقية
+      <span class="absolute -bottom-2 right-0 w-16 h-1 bg-[#A68A64] rounded-full"></span>
+    </h2>
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -346,7 +349,10 @@
   <!-- قسم الأخبار والفعاليات -->
   <section class="py-16 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5]">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-[#3D3D3D] mb-12 animate-slide-up">الأحداث والفعاليات</h2>
+   <h2 class="text-2xl md:text-4xl font-bold text-[#3D3D3D] mb-12 animate-slide-up relative inline-block">
+  الأحداث والفعاليات
+  <span class="absolute -bottom-2 right-0 w-16 h-1 bg-[#A68A64] rounded-full"></span>
+</h2>
 
     <!-- فلاتر التصفية -->
     <!-- <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-16">
@@ -477,7 +483,7 @@
       <div class="swiper testimonialsSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md transform transition duration-500 hover:scale-105 animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md ">
               <div class="relative w-24 h-24 mx-auto mb-4">
                 <img src="images/users/1.jpg" alt="طالب 1" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64]">
               </div>
@@ -488,7 +494,7 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md transform transition duration-500 hover:scale-105 animate-fade-in delay-100">
+            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md  delay-100">
               <div class="relative w-24 h-24 mx-auto mb-4">
                 <img src="images/users/2.jpg" alt="طالب 2" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64]">
               </div>
@@ -499,7 +505,7 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md transform transition duration-500 hover:scale-105 animate-fade-in delay-200">
+            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md  delay-200">
               <div class="relative w-24 h-24 mx-auto mb-4">
                 <img src="images/users/3.jpg" alt="طالب 3" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64]">
               </div>
@@ -510,7 +516,7 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md transform transition duration-500 hover:scale-105 animate-fade-in delay-300">
+            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md  delay-300">
               <div class="relative w-24 h-24 mx-auto mb-4">
                 <img src="images/users/4.jpg" alt="طالب 4" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64]">
               </div>
@@ -530,7 +536,10 @@
   <section class="py-20 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5]">
     <div class="container mx-auto px-4 flex items-center justify-between flex-col md:flex-row gap-8">
       <div class="text-center md:text-right w-full md:w-1/2 animate-slide-up">
-        <h2 class="text-4xl md:text-5xl font-bold text-[#A68A64] mb-4">  اكتشف برامجنا</h2>
+       <h2 class="text-2xl md:text-4xl font-bold text-[#3D3D3D] mb-4 relative inline-block">
+  اكتشف برامجنا
+  <span class="absolute -bottom-2 right-0 w-16 h-1 bg-[#A68A64] rounded-full"></span>
+</h2>
         <p class="text-[#6B7280] text-lg leading-relaxed mb-6">
 
           انضم إلى بيت العود لتتعلم العزف على آلات الشرقية بأساليب احترافية من المعلمين المتميزين، واستمتع بتجربة تعليمية فريدة تحافظ على التراث الموسيقي.
@@ -546,19 +555,19 @@
     </div>
   </section>
 
-<!-- قسم المدرسون -->
+
 <!-- قسم المدرسون -->
 <section class="py-16 bg-gradient-to-b from-[#F5F5F5] to-[#EDE4DA] relative">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-12 animate-slide-up relative inline-block">
-      المدرسون
-      <span class="absolute -bottom-2 right-0 w-16 h-1 bg-[#A68A64] rounded-full"></span>
-    </h2>
+    <h2 class="text-2xl md:text-4xl font-bold text-[#3D3D3D] mb-12 animate-slide-up relative inline-block">
+  المدرسون
+  <span class="absolute -bottom-2 right-0 w-16 h-1 bg-[#A68A64] rounded-full"></span>
+</h2>
     <div class="swiper teachersSwiper">
       <div class="swiper-wrapper">
         <!-- مدرس 1 -->
         <div class="swiper-slide  border-b-2 border-[#A68A64] rounded-lg">
-          <div class="transform transition duration-500 hover:scale-105 animate-fade-in mx-auto max-w-xs">
+          <div class=" mx-auto max-w-xs">
             <div class="relative w-full h-64">
               <img src="images/teachers/1.jpg" alt="مدرس 1" class="w-full h-full rounded-xl object-cover shadow-md">
             </div>
@@ -570,7 +579,7 @@
         </div>
         <!-- مدرس 2 -->
         <div class="swiper-slide  border-b-2 border-[#A68A64] rounded-lg">
-          <div class="transform transition duration-500 hover:scale-105 animate-fade-in delay-100 mx-auto max-w-xs">
+          <div class=" delay-100 mx-auto max-w-xs">
             <div class="relative w-full h-64">
               <img src="images/teachers/2.jpg" alt="مدرس 2" class="w-full h-full rounded-xl object-cover shadow-md">
             </div>
@@ -582,7 +591,7 @@
         </div>
         <!-- مدرس 3 -->
         <div class="swiper-slide  border-b-2 border-[#A68A64] rounded-lg">
-          <div class="transform transition duration-500 hover:scale-105 animate-fade-in delay-200 mx-auto max-w-xs">
+          <div class=" delay-200 mx-auto max-w-xs">
             <div class="relative w-full h-64">
               <img src="images/teachers/3.jpg" alt="مدرس 3" class="w-full h-full rounded-xl object-cover shadow-md">
             </div>
@@ -594,7 +603,7 @@
         </div>
         <!-- مدرس 4 -->
         <div class="swiper-slide  border-b-2 border-[#A68A64] rounded-lg">
-          <div class="transform transition duration-500 hover:scale-105 animate-fade-in delay-300 mx-auto max-w-xs">
+          <div class=" delay-300 mx-auto max-w-xs">
             <div class="relative w-full h-64">
               <img src="images/teachers/4.jpg" alt="مدرس 4" class="w-full h-full rounded-xl object-cover shadow-md">
             </div>
@@ -606,7 +615,7 @@
         </div>
         <!-- مدرس 5 -->
         <div class="swiper-slide  border-b-2 border-[#A68A64] rounded-lg">
-          <div class="transform transition duration-500 hover:scale-105 animate-fade-in delay-400 mx-auto max-w-xs">
+          <div class=" delay-400 mx-auto max-w-xs">
             <div class="relative w-full h-64">
               <img src="images/teachers/5.jpg" alt="مدرس 5" class="w-full h-full rounded-xl object-cover shadow-md">
             </div>
@@ -638,10 +647,10 @@
 <!-- قسم فريق العمل الإداري -->
 <section class="py-16 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5] relative">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-12 animate-slide-up relative inline-block">
-      فريق العمل الإداري
-      <span class="absolute -bottom-2 right-0 w-16 h-1 bg-[#A68A64] rounded-full"></span>
-    </h2>
+   <h2 class="text-2xl md:text-4xl font-bold text-[#3D3D3D] mb-12 animate-slide-up relative inline-block">
+  فريق العمل الإداري
+  <span class="absolute -bottom-2 right-0 w-16 h-1 bg-[#A68A64] rounded-full"></span>
+</h2>
     <div class="swiper adminSwiper">
       <div class="swiper-wrapper">
         <!-- عضو 1 -->
@@ -654,7 +663,7 @@
               <!-- <div class="absolute top-0 -right-2 w-1 h-48 bg-[#A68A64] opacity-50"></div> -->
             </div>
             <!-- المستطيل الأنيق لعرض التفاصيل -->
-            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs transform transition duration-500 hover:scale-105">
+            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs ">
               <h3 class="text-xl font-semibold text-[#A68A64] mb-1">سعد المحمد</h3>
               <p class="text-[#6B7280] text-sm font-medium mb-4">مدير الإدارة</p>
               <!-- أيقونات السوشل ميديا -->
@@ -676,7 +685,7 @@
               <img src="images/team/3.jpg" alt="عضو 2" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64] shadow-lg">
               <!-- <div class="absolute top-0 -right-2 w-1 h-48 bg-[#A68A64] opacity-50"></div> -->
             </div>
-            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs transform transition duration-500 hover:scale-105">
+            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs ">
               <h3 class="text-xl font-semibold text-[#A68A64] mb-1">كوثر محمد</h3>
               <p class="text-[#6B7280] text-sm font-medium mb-4">مسؤولة التسجيل</p>
               <div class="flex justify-center space-x-4 space-x-reverse">
@@ -697,7 +706,7 @@
               <img src="images/team/1.jpg" alt="عضو 3" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64] shadow-lg">
               <!-- <div class="absolute top-0 -right-2 w-1 h-48 bg-[#A68A64] opacity-50"></div> -->
             </div>
-            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs transform transition duration-500 hover:scale-105">
+            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs ">
               <h3 class="text-xl font-semibold text-[#A68A64] mb-1">عبدالله الراشد</h3>
               <p class="text-[#6B7280] text-sm font-medium mb-4">منسق الفعاليات</p>
               <div class="flex justify-center space-x-4 space-x-reverse">
@@ -718,7 +727,7 @@
               <img src="images/team/4.jpg" alt="عضو 4" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64] shadow-lg">
               <!-- <div class="absolute top-0 -right-2 w-1 h-48 bg-[#A68A64] opacity-50"></div> -->
             </div>
-            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs transform transition duration-500 hover:scale-105">
+            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs ">
               <h3 class="text-xl font-semibold text-[#A68A64] mb-1">عبدالله الراشد</h3>
               <p class="text-[#6B7280] text-sm font-medium mb-4">منسق الفعاليات</p>
               <div class="flex justify-center space-x-4 space-x-reverse">
@@ -739,7 +748,7 @@
               <img src="images/team/5.jpg" alt="عضو 5" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64] shadow-lg">
              
             </div>
-            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs transform transition duration-500 hover:scale-105">
+            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs ">
               <h3 class="text-xl font-semibold text-[#A68A64] mb-1">عبدالله الراشد</h3>
               <p class="text-[#6B7280] text-sm font-medium mb-4">منسق الفعاليات</p>
               <div class="flex justify-center space-x-4 space-x-reverse">
@@ -831,6 +840,7 @@
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
+        lazy: true,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -845,6 +855,7 @@
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
+        lazy: true,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -878,6 +889,7 @@
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
+        lazy: true,
         navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -892,6 +904,7 @@
   slidesPerView: 1,
   spaceBetween: 20,
   loop: true,
+  lazy: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
