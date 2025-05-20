@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بيت العود - The Oud House</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Add Swiper JS here -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <style>
+  @font-face {
+    font-family: 'FF Shamel';
+    src: url('fonts/FF Shamel Family Sans One Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'FF Shamel', sans-serif;
+    background-color: #F5F5F5;
+    color: #3D3D3D;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  .testimonialsSwiper .swiper-button-next,
+  .testimonialsSwiper .swiper-button-prev {
+    color: #A68A64;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+  .testimonialsSwiper .swiper-button-next:hover,
+  .testimonialsSwiper .swiper-button-prev:hover {
+    background-color: rgba(166, 138, 100, 0.9);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 1s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+
+  /* Go to Top Button Styles */
+  #go-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #A68A64;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+  }
+
+  #go-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #go-to-top:hover {
+    background-color: #7A6A4F;
+  }
+
+  #go-to-top svg {
+    width: 24px;
+    height: 24px;
+  }
+  .apply-button {
+  background-color: #ffffff;
+  color: #A68A64;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+.apply-button:hover {
+  background-color: #e6e6e6;
+  color: #7A6A4F;
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body class="text-[#3D3D3D]">
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="#">
+            <img src="images/newlogo.avif" alt="شعار بيت العود" class="h-16 w-auto object-contain animate-fade-in">
+          </a>
+        </div>
+
+        <!-- Navigation -->
+       <nav class="hidden md:flex space-x-6 space-x-reverse text-sm font-semibold">
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition border-b-2 border-[#A68A64] pb-1">الصفحة الرئيسية</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">البرامج / الآلات الموسيقية</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">المدرسون</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">فريق العمل الإداري</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">من نحن</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">تواصل معنا</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">التقديم على البرامج</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">
+  EN 
+  
+  <svg class="text-[#3D3D3D] w-4 h-4 inline-block align-middle ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64l-185.3 0c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64l185.3 0c2.2 20.4 3.3 41.8 3.3 64zm28.8-64l123.1 0c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64l-123.1 0c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32l-116.7 0c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0l-176.6 0c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0L18.6 160C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192l123.1 0c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64L8.1 320C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6l176.6 0c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352l116.7 0zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6l116.7 0z"/></svg>
+</a>
+</nav>
+
+        <!-- Mobile menu icon -->
+        <div class="md:hidden">
+          <button id="mobile-menu-toggle" class="text-[#A68A64] focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+   <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white text-sm">
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition inline-block border-b-2 border-[#A68A64] pb-1">الصفحة الرئيسية</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">البرامج / الآلات الموسيقية</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">المدرسون</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">فريق العمل الإداري</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">من نحن</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">تواصل معنا</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">التقديم على البرامج</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">English</a>
+</div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="relative h-screen overflow-hidden">
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+    <source src="images/video.mp4" type="video/mp4">
+  </video>
+  <div class="relative z-10 flex flex-col items-center justify-center text-center h-full bg-black/40 px-4">
+    <h1 class="text-white text-3xl md:text-5xl font-bold mb-6 animate-slide-up">مرحبًا بكم في بيت العود</h1>
+    <a href="#" class="bg-[#A68A64] text-white px-6 py-3 rounded-full text-lg hover:bg-[#7A6A4F] transition animate-fade-in">
+       قدم الآن
+    </a>
+  </div>
+</main>
+
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+      <div class="w-full md:w-1/2 animate-fade-in">
+        <img src="images/about.png" alt="نبذة عن بيت العود" class="rounded-2xl shadow-lg w-full max-w-md mx-auto">
+      </div>
+      <div class="w-full md:w-1/2 animate-slide-up delay-100 text-right">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-6">نبذة عن بيت العود</h2>
+        <p class="text-[#6B7280] leading-relaxed mb-6">
+          بيت العود هو مركز متخصص في تعليم العزف على آلة العود والآلات الموسيقية الشرقية، ويقدم برامج تدريبية احترافية تحت إشراف نخبة من المعلمين ذوي الخبرة. نحن نؤمن بأهمية الحفاظ على التراث الموسيقي ونقله للأجيال القادمة بأسلوب عصري.
+        </p>
+        <a href="#" class="inline-block bg-[#A68A64] text-white px-6 py-3 rounded-full hover:bg-[#7A6A4F] transition">
+          اقرأ المزيد
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم برامجنا -->
+  <section class="py-16 bg-[#F5F5F5]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-12 animate-slide-up">برامجنا</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="rounded-3xl overflow-hidden shadow-lg bg-white relative h-[400px]">
+              <img src="images/machines/1.jpg" alt="آلة 1" class="w-full h-full object-cover">
+              <div class="absolute bottom-0 w-full bg-[#A68A64] bg-opacity-90 text-white p-4">
+                <h3 class="text-xl font-semibold">برنامج العود</h3>
+                <p class="text-sm mt-1">تعلم أصول العزف على آلة العود</p>
+                <a href="#" class="mt-3 inline-block text-sm border border-white px-4 py-1 rounded hover:bg-[#7A6A4F] hover:text-white transition">
+                  المزيد من التفاصيل
+                </a>
+                                <a href="#" class="inline-block text-sm bg-white text-[#A68A64] px-5 py-2 rounded-full font-semibold hover:bg-[#e6e6e6] hover:text-[#7A6A4F] hover:scale-105 transition transform">
+                التقديم
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="rounded-3xl overflow-hidden shadow-lg bg-white relative h-[400px]">
+              <img src="images/machines/2.jpg" alt="آلة 2" class="w-full h-full object-cover">
+              <div class="absolute bottom-0 w-full bg-[#A68A64] bg-opacity-90 text-white p-4">
+                <h3 class="text-xl font-semibold">برنامج القانون</h3>
+                <p class="text-sm mt-1">دروس احترافية في العزف على القانون</p>
+                <a href="#" class="mt-3 inline-block text-sm border border-white px-4 py-1 rounded hover:bg-[#7A6A4F] hover:text-white transition">
+                  المزيد من التفاصيل
+                </a>
+                                <a href="#" class="inline-block text-sm bg-white text-[#A68A64] px-5 py-2 rounded-full font-semibold hover:bg-[#e6e6e6] hover:text-[#7A6A4F] hover:scale-105 transition transform">
+                التقديم
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="rounded-3xl overflow-hidden shadow-lg bg-white relative h-[400px]">
+              <img src="images/machines/3.jpg" alt="آلة 3" class="w-full h-full object-cover">
+              <div class="absolute bottom-0 w-full bg-[#A68A64] bg-opacity-90 text-white p-4">
+                <h3 class="text-xl font-semibold">برنامج الكمان</h3>
+                <p class="text-sm mt-1">تقنيات الكمان الشرقية والغربية</p>
+                <a href="#" class="mt-3 inline-block text-sm border border-white px-4 py-1 rounded hover:bg-[#7A6A4F] hover:text-white transition">
+                  المزيد من التفاصيل
+                </a>
+                                <a href="#" class="inline-block text-sm bg-white text-[#A68A64] px-5 py-2 rounded-full font-semibold hover:bg-[#e6e6e6] hover:text-[#7A6A4F] hover:scale-105 transition transform">
+                التقديم
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="rounded-3xl overflow-hidden shadow-lg bg-white relative h-[400px]">
+              <img src="images/machines/4.jpg" alt="آلة 4" class="w-full h-full object-cover">
+              <div class="absolute bottom-0 w-full bg-[#A68A64] bg-opacity-90 text-white p-4">
+                <h3 class="text-xl font-semibold">برنامج الإيقاع</h3>
+                <p class="text-sm mt-1">أساسيات الإيقاع الشرقي والتطبيقي</p>
+                <a href="#" class="mt-3 inline-block text-sm border border-white px-4 py-1 rounded hover:bg-[#7A6A4F] hover:text-white transition">
+                  المزيد من التفاصيل
+                </a>
+                                <a href="#" class="inline-block text-sm bg-white text-[#A68A64] px-5 py-2 rounded-full font-semibold hover:bg-[#e6e6e6] hover:text-[#7A6A4F] hover:scale-105 transition transform">
+                التقديم
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="rounded-3xl overflow-hidden shadow-lg bg-white relative h-[400px]">
+              <img src="images/machines/5.jpg" alt="آلة 5" class="w-full h-full object-cover">
+              <div class="absolute bottom-0 w-full bg-[#A68A64] bg-opacity-90 text-white p-4">
+                <h3 class="text-xl font-semibold">برنامج الإيقاع</h3>
+                <p class="text-sm mt-1">أساسيات الإيقاع الشرقي والتطبيقي</p>
+                <a href="#" class="mt-3 inline-block text-sm border border-white px-4 py-1 rounded hover:bg-[#7A6A4F] hover:text-white transition">
+                  المزيد من التفاصيل
+                </a>
+                                <a href="#" class="inline-block text-sm bg-white text-[#A68A64] px-5 py-2 rounded-full font-semibold hover:bg-[#e6e6e6] hover:text-[#7A6A4F] hover:scale-105 transition transform">
+                التقديم
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="rounded-3xl overflow-hidden shadow-lg bg-white relative h-[400px]">
+              <img src="images/machines/6.jpg" alt="آلة 6" class="w-full h-full object-cover">
+              <div class="absolute bottom-0 w-full bg-[#A68A64] bg-opacity-90 text-white p-4">
+                <h3 class="text-xl font-semibold">برنامج الإيقاع</h3>
+                <p class="text-sm mt-1">أساسيات الإيقاع الشرقي والتطبيقي</p>
+                <a href="#" class="mt-3 inline-block text-sm border border-white px-4 py-1 rounded hover:bg-[#7A6A4F] hover:text-white transition">
+                  المزيد من التفاصيل
+                </a>
+                <a href="#" class="inline-block text-sm bg-white text-[#A68A64] px-5 py-2 rounded-full font-semibold hover:bg-[#e6e6e6] hover:text-[#7A6A4F] hover:scale-105 transition transform">
+                التقديم
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next text-[#A68A64]"></div>
+        <div class="swiper-button-prev text-[#A68A64]"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الأخبار والفعاليات -->
+  <section class="py-16 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-12 animate-slide-up">الأخبار والفعاليات</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 animate-fade-in">
+          <img src="images/blog/1.jpg" alt="فعالية 1" class="w-full h-48 object-cover">
+          <div class="p-6 text-right">
+            <h3 class="text-xl font-semibold text-[#A68A64] mb-2">حفل موسيقي لتلاميذ بيت العود</h3>
+           <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+              <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+              ٣٠ مايو
+            </p>
+            <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+              انضموا إلينا في حفل موسيقي مميز يقدمه تلاميذ بيت العود، حيث سيعزفون أجمل المقطوعات على آلة العود والكمان.
+            </p>
+            <div class="flex justify-end space-x-4 space-x-reverse">
+              <a href="#" class="text-[#A68A64] text-sm font-semibold hover:underline">اقرأ المزيد</a>
+              <a href="#" class="bg-[#A68A64] text-white px-4 py-1 rounded-full text-sm font-semibold hover:bg-[#7A6A4F] hover:scale-105 transition transform">حضور</a>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 animate-fade-in delay-100">
+          <img src="images/blog/2.jpg" alt="فعالية 2" class="w-full h-48 object-cover">
+          <div class="p-6 text-right">
+            <h3 class="text-xl font-semibold text-[#A68A64] mb-2">ورشة عمل حول الإيقاع الشرقي</h3>
+            <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+              <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+              ٣٠ مايو
+            </p>
+            <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+              ورشة عمل مكثفة لتعليم أساسيات الإيقاع الشرقي بقيادة أحد أبرز المدربين في بيت العود.
+            </p>
+            <div class="flex justify-end space-x-4 space-x-reverse">
+              <a href="#" class="text-[#A68A64] text-sm font-semibold hover:underline">اقرأ المزيد</a>
+              <a href="#" class="bg-[#A68A64] text-white px-4 py-1 rounded-full text-sm font-semibold hover:bg-[#7A6A4F] hover:scale-105 transition transform">حضور</a>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 animate-fade-in delay-200">
+          <img src="images/blog/3.jpg" alt="فعالية 3" class="w-full h-48 object-cover">
+          <div class="p-6 text-right">
+            <h3 class="text-xl font-semibold text-[#A68A64] mb-2">معرض الآلات الموسيقية التراثية</h3>
+            <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+              <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+              ٣١ مايو
+            </p>
+            <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+              زوروا معرضنا السنوي للآلات الموسيقية التراثية وتعرفوا على تاريخ العود والقانون.
+            </p>
+            <div class="flex justify-end space-x-4 space-x-reverse">
+              <a href="#" class="text-[#A68A64] text-sm font-semibold hover:underline">اقرأ المزيد</a>
+              <a href="#" class="bg-[#A68A64] text-white px-4 py-1 rounded-full text-sm font-semibold hover:bg-[#7A6A4F] hover:scale-105 transition transform">حضور</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12">
+        <a href="#" class="bg-[#A68A64] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#7A6A4F] transition duration-300 animate-pulse">
+          استعراض المزيد
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم آراء الطلاب -->
+  <section class="py-16 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-12 animate-slide-up">آراء الطلاب</h2>
+      <div class="swiper testimonialsSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md transform transition duration-500 hover:scale-105 animate-fade-in">
+              <div class="relative w-24 h-24 mx-auto mb-4">
+                <img src="images/users/1.jpg" alt="طالب 1" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64]">
+              </div>
+              <h3 class="text-lg font-semibold text-[#A68A64] mb-2">أحمد خالد</h3>
+              <p class="text-[#6B7280] text-sm leading-relaxed">
+                "تجربة رائعة في بيت العود! تعلمت العزف على العود بطريقة احترافية بفضل المدربين المتميزين والجو المليء بالإلهام."
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md transform transition duration-500 hover:scale-105 animate-fade-in delay-100">
+              <div class="relative w-24 h-24 mx-auto mb-4">
+                <img src="images/users/2.jpg" alt="طالب 2" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64]">
+              </div>
+              <h3 class="text-lg font-semibold text-[#A68A64] mb-2">سارة عبدالله</h3>
+              <p class="text-[#6B7280] text-sm leading-relaxed">
+                "بيت العود ليس مجرد مكان للتعلم، بل هو بيت ثانٍ! الكمان أصبح جزءًا من حياتي بفضل الدروس الممتعة هنا."
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md transform transition duration-500 hover:scale-105 animate-fade-in delay-200">
+              <div class="relative w-24 h-24 mx-auto mb-4">
+                <img src="images/users/3.jpg" alt="طالب 3" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64]">
+              </div>
+              <h3 class="text-lg font-semibold text-[#A68A64] mb-2">محمد العتيبي</h3>
+              <p class="text-[#6B7280] text-sm leading-relaxed">
+                "ورشات الإيقاع الشرقي كانت مذهلة! أنصح الجميع بالانضمام إلى بيت العود لتجربة تعليمية لا تُنسى."
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-2xl shadow-lg p-6 mx-auto max-w-md transform transition duration-500 hover:scale-105 animate-fade-in delay-300">
+              <div class="relative w-24 h-24 mx-auto mb-4">
+                <img src="images/users/4.jpg" alt="طالب 4" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64]">
+              </div>
+              <h3 class="text-lg font-semibold text-[#A68A64] mb-2">نورة السعد</h3>
+              <p class="text-[#6B7280] text-sm leading-relaxed">
+                "تعليم القانون كان ممتعًا وسهلاً مع فريق بيت العود. أشعر الآن بثقة كبيرة في العزف أمام الجمهور!"
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next text-[#A68A64]"></div>
+        <div class="swiper-button-prev text-[#A68A64]"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5]">
+    <div class="container mx-auto px-4 flex items-center justify-between flex-col md:flex-row gap-8">
+      <div class="text-center md:text-right w-full md:w-1/2 animate-slide-up">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#A68A64] mb-4">  اكتشف برامجنا</h2>
+        <p class="text-[#6B7280] text-lg leading-relaxed mb-6">
+
+          انضم إلى بيت العود لتتعلم العزف على آلات الشرقية بأساليب احترافية من المعلمين المتميزين، واستمتع بتجربة تعليمية فريدة تحافظ على التراث الموسيقي.
+
+        </p>
+        <a href="#" class="inline-block bg-[#A68A64] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#7A6A4F] transition animate-fade-in">
+         المزيد
+        </a>
+      </div>
+      <div class="w-full md:w-1/2">
+        <img src="images/register.jpg" alt="قاعة التدريب" class="w-full h-auto rounded-lg shadow-lg animate-fade-in">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-b from-[#A68A64] to-[#7A6A4F] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- الشعار -->
+        <div class="flex flex-col items-center md:items-start">
+          <a href="#" class="mb-4">
+            <img src="images/newlogo.avif" alt="شعار بيت العود" class="h-20 w-auto object-contain animate-fade-in">
+          </a>
+          <p class="text-sm text-center md:text-right text-white">
+            بيت العود - مركز متخصص في تعليم العزف على آلة العود والآلات الموسيقية الشرقية.
+          </p>
+          <!-- روابط السوشل ميديا -->
+          <div class="flex space-x-4 space-x-reverse mt-4">
+            <a href="#" class="hover:text-[#EDE4DA] transition">
+              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+            </a>
+            <a href="#" class="hover:text-[#EDE4DA] transition">
+              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
+            </a>
+            <a href="#" class="hover:text-[#EDE4DA] transition">
+              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </a>
+            <a href="#" class="hover:text-[#EDE4DA] transition">
+              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- روابط سريعة -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 border-b-2 border-white pb-2 text-center md:text-right">روابط سريعة</h3>
+          <ul class="space-y-2 text-center md:text-right">
+            <li><a href="#" class="hover:text-[#EDE4DA] transition">الصفحة الرئيسية</a></li>
+            <li><a href="#" class="hover:text-[#EDE4DA] transition">من نحن</a></li>
+            <li><a href="#" class="hover:text-[#EDE4DA] transition">تواصل معنا</a></li>
+            <li><a href="#" class="hover:text-[#EDE4DA] transition">التقديم على البرامج</a></li>
+          </ul>
+        </div>
+
+        <!-- تواصل معنا -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 border-b-2 border-white pb-2 text-center md:text-right">تواصل معنا</h3>
+          <ul class="space-y-2 text-center md:text-right">
+            <li><a href="mailto:info@baitaloud.com" class="hover:text-[#EDE4DA] transition">info@baitaloud.com</a></li>
+            <li><a href="tel:+966123456789" class="hover:text-[#EDE4DA] transition">+966 123 456 789</a></li>
+            <li class="text-sm text-white">الرياض، المملكة العربية السعودية</li>
+          </ul>
+        </div>
+
+        <!-- البرامج والمدرسون -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 border-b-2 border-white pb-2 text-center md:text-right">البرامج والمدرسون</h3>
+          <ul class="space-y-2 text-center md:text-right">
+            <li><a href="#" class="hover:text-[#EDE4DA] transition">برامج العود</a></li>
+            <li><a href="#" class="hover:text-[#EDE4DA] transition">برامج القانون</a></li>
+            <li><a href="#" class="hover:text-[#EDE4DA] transition">المدرسون</a></li>
+            <li><a href="#" class="hover:text-[#EDE4DA] transition">فريق العمل الإداري</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- إزالة السوشل ميديا وإبقاء شعار وزارة الثقافة (إذا أردت إعادته) -->
+      <div class="mt-8 pt-8 border-t border-white/30 flex flex-col md:flex-row items-center justify-between">
+        <!-- <a href="#" class="flex items-center space-x-2 space-x-reverse">
+          <span class="text-sm text-[#EDE4DA]">برعاية</span>
+          <img src="images/logo2.svg" alt="شعار وزارة الثقافة" class="h-10 w-auto object-contain animate-fade-in">
+        </a> -->
+      </div>
+      <div class="mt-6 text-center text-sm text-[#EDE4DA]">
+        <p>© 2025 بيت العود. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+</footer>
+
+    <!-- Go to Top Button -->
+  <button id="go-to-top" title="الرجوع إلى الأعلى">
+    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/>
+    </svg>
+  </button>
+
+  <script>
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 4 },
+        },
+      });
+
+      new Swiper(".testimonialsSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          768: { slidesPerView: 2 },
+        },
+      });
+   
+    // Go to Top Button Functionality
+      const goToTopBtn = document.getElementById('go-to-top');
+
+      // Show/Hide button on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          goToTopBtn.classList.add('show');
+        } else {
+          goToTopBtn.classList.remove('show');
+        }
+      });
+
+      // Smooth scroll to top on click
+      goToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
