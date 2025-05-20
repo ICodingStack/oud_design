@@ -126,13 +126,30 @@
   color: #7A6A4F;
   transform: scale(1.05);
 }
+
+
+.adminSwiper .swiper-button-next,
+.adminSwiper .swiper-button-prev {
+  color: #A68A64;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.adminSwiper .swiper-button-next:hover,
+.adminSwiper .swiper-button-prev:hover {
+  background-color: rgba(166, 138, 100, 0.9);
+}
 </style>
 </head>
 <body class="text-[#3D3D3D]">
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
+ <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex items-center justify-start h-20">
         <!-- Logo -->
         <div class="flex-shrink-0">
           <a href="#">
@@ -141,11 +158,12 @@
         </div>
 
         <!-- Navigation -->
-       <nav class="hidden md:flex space-x-6 space-x-reverse text-sm font-semibold">
-  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition border-b-2 border-[#A68A64] pb-1">الصفحة الرئيسية</a>
+       <nav class="hidden md:flex space-x-6 space-x-reverse text-sm font-semibold mr-64">
+  <a href="/index2.html" class="hover:text-[#A68A64] text-[#3D3D3D] transition  border-[#A68A64] border-b-2 pb-1">الصفحة الرئيسية</a>
   <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">البرامج / الآلات الموسيقية</a>
-  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">المدرسون</a>
-  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">فريق العمل الإداري</a>
+  <!-- <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">المدرسون</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">فريق العمل الإداري</a> -->
+  <a href="/events.html" class="hover:text-[#A68A64] text-[#3D3D3D] transition ">الاحداث </a>
   <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">من نحن</a>
   <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">تواصل معنا</a>
   <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">التقديم على البرامج</a>
@@ -171,8 +189,8 @@
    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white text-sm">
   <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition inline-block border-b-2 border-[#A68A64] pb-1">الصفحة الرئيسية</a>
   <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">البرامج / الآلات الموسيقية</a>
-  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">المدرسون</a>
-  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">فريق العمل الإداري</a>
+  <!-- <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">المدرسون</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">فريق العمل الإداري</a> -->
   <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">من نحن</a>
   <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">تواصل معنا</a>
   <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">التقديم على البرامج</a>
@@ -193,22 +211,34 @@
   </div>
 </main>
 
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-      <div class="w-full md:w-1/2 animate-fade-in">
-        <img src="images/about.png" alt="نبذة عن بيت العود" class="rounded-2xl shadow-lg w-full max-w-md mx-auto">
-      </div>
-      <div class="w-full md:w-1/2 animate-slide-up delay-100 text-right">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-6">نبذة عن بيت العود</h2>
-        <p class="text-[#6B7280] leading-relaxed mb-6">
-          بيت العود هو مركز متخصص في تعليم العزف على آلة العود والآلات الموسيقية الشرقية، ويقدم برامج تدريبية احترافية تحت إشراف نخبة من المعلمين ذوي الخبرة. نحن نؤمن بأهمية الحفاظ على التراث الموسيقي ونقله للأجيال القادمة بأسلوب عصري.
-        </p>
-        <a href="#" class="inline-block bg-[#A68A64] text-white px-6 py-3 rounded-full hover:bg-[#7A6A4F] transition">
-          اقرأ المزيد
-        </a>
+  <section class="py-20 bg-white relative overflow-hidden">
+  <!-- خلفية زخرفية خفيفة -->
+  <div class="absolute inset-0 bg-[url('images/footer5.png')] bg-contain bg-no-repeat bg-bottom opacity-10 pointer-events-none"></div>
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8 md:gap-12 relative z-10">
+    <!-- قسم الصورة -->
+    <div class="w-full md:w-1/2 animate-fade-in">
+      <div class="relative w-full max-w-md mx-auto group aspect-w-4 aspect-h-3">
+        <!-- الإطار الزخرفي -->
+        <div class="absolute -inset-2 bg-gradient-to-r from-[#A68A64]/20 to-[#D3C8B5]/20 rounded-2xl transform group-hover:scale-105 transition duration-500"></div>
+        <!-- الصورة -->
+        <img src="images/about.png" alt="نبذة عن بيت العود" class="relative w-full h-full rounded-2xl shadow-lg border border-[#EDE4DA] object-cover">
       </div>
     </div>
-  </section>
+    <!-- قسم النص -->
+    <div class="w-full md:w-1/2 animate-slide-up delay-100 text-right">
+      <h2 class="text-2xl md:text-4xl font-bold text-[#3D3D3D] mb-4 relative inline-block">
+        نبذة عن بيت العود
+        <span class="absolute -bottom-2 right-0 w-16 h-1 bg-[#A68A64] rounded-full"></span>
+      </h2>
+      <p class="text-[#6B7280] text-sm md:text-base leading-relaxed mb-6 max-w-lg">
+        بيت العود هو مركز متخصص في تعليم العزف على آلة العود والآلات الموسيقية الشرقية، ويقدم برامج تدريبية احترافية تحت إشراف نخبة من المعلمين ذوي الخبرة. نحن نؤمن بأهمية الحفاظ على التراث الموسيقي ونقله للأجيال القادمة بأسلوب عصري.
+      </p>
+      <a href="#" class="inline-block bg-[#A68A64] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300">
+        اقرأ المزيد
+      </a>
+    </div>
+  </div>
+</section>
 
   <!-- قسم برامجنا -->
   <section class="py-16 bg-[#F5F5F5]">
@@ -315,71 +345,133 @@
 
   <!-- قسم الأخبار والفعاليات -->
   <section class="py-16 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5]">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-12 animate-slide-up">الأخبار والفعاليات</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 animate-fade-in">
-          <img src="images/blog/1.jpg" alt="فعالية 1" class="w-full h-48 object-cover">
-          <div class="p-6 text-right">
-            <h3 class="text-xl font-semibold text-[#A68A64] mb-2">حفل موسيقي لتلاميذ بيت العود</h3>
-           <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
-              <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
-              ٣٠ مايو
-            </p>
-            <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
-              انضموا إلينا في حفل موسيقي مميز يقدمه تلاميذ بيت العود، حيث سيعزفون أجمل المقطوعات على آلة العود والكمان.
-            </p>
-            <div class="flex justify-end space-x-4 space-x-reverse">
-              <a href="#" class="text-[#A68A64] text-sm font-semibold hover:underline">اقرأ المزيد</a>
-              <a href="#" class="bg-[#A68A64] text-white px-4 py-1 rounded-full text-sm font-semibold hover:bg-[#7A6A4F] hover:scale-105 transition transform">حضور</a>
-            </div>
-          </div>
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#3D3D3D] mb-12 animate-slide-up">الأحداث والفعاليات</h2>
+
+    <!-- فلاتر التصفية -->
+    <!-- <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-16">
+      <div class="w-full md:w-1/4">
+        <div class="relative">
+          <label class="absolute -top-6 right-0 text-sm font-semibold text-[#3D3D3D]">تصفية حسب النوع</label>
+          <select class="w-full p-3 bg-white border border-[#A68A64] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A68A64] transition duration-300 text-right appearance-none">
+            <option value="">اختر</option>
+            <option value="event">حدث</option>
+            <option value="open-day">يوم مفتوح</option>
+          </select>
+          <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#A68A64]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+            <path d="M182.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128z"/>
+          </svg>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 animate-fade-in delay-100">
-          <img src="images/blog/2.jpg" alt="فعالية 2" class="w-full h-48 object-cover">
-          <div class="p-6 text-right">
-            <h3 class="text-xl font-semibold text-[#A68A64] mb-2">ورشة عمل حول الإيقاع الشرقي</h3>
-            <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
-              <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
-              ٣٠ مايو
-            </p>
-            <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
-              ورشة عمل مكثفة لتعليم أساسيات الإيقاع الشرقي بقيادة أحد أبرز المدربين في بيت العود.
-            </p>
-            <div class="flex justify-end space-x-4 space-x-reverse">
-              <a href="#" class="text-[#A68A64] text-sm font-semibold hover:underline">اقرأ المزيد</a>
-              <a href="#" class="bg-[#A68A64] text-white px-4 py-1 rounded-full text-sm font-semibold hover:bg-[#7A6A4F] hover:scale-105 transition transform">حضور</a>
-            </div>
-          </div>
+      </div>
+      <div class="w-full md:w-1/4">
+        <div class="relative">
+          <label class="absolute -top-6 right-0 text-sm font-semibold text-[#3D3D3D]">تصفية حسب المركز</label>
+          <select class="w-full p-3 bg-white border border-[#A68A64] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A68A64] transition duration-300 text-right appearance-none">
+            <option value="">اختر</option>
+            <option value="alkhobar">الخبر</option>
+            <option value="riyadh">الرياض</option>
+            <option value="jeddah">جدة</option>
+          </select>
+          <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#A68A64]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+            <path d="M182.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128z"/>
+          </svg>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 animate-fade-in delay-200">
-          <img src="images/blog/3.jpg" alt="فعالية 3" class="w-full h-48 object-cover">
-          <div class="p-6 text-right">
-            <h3 class="text-xl font-semibold text-[#A68A64] mb-2">معرض الآلات الموسيقية التراثية</h3>
-            <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
-              <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
-              ٣١ مايو
-            </p>
-            <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
-              زوروا معرضنا السنوي للآلات الموسيقية التراثية وتعرفوا على تاريخ العود والقانون.
-            </p>
-            <div class="flex justify-end space-x-4 space-x-reverse">
-              <a href="#" class="text-[#A68A64] text-sm font-semibold hover:underline">اقرأ المزيد</a>
-              <a href="#" class="bg-[#A68A64] text-white px-4 py-1 rounded-full text-sm font-semibold hover:bg-[#7A6A4F] hover:scale-105 transition transform">حضور</a>
-            </div>
+      </div>
+      <div class="w-full md:w-auto">
+        <button class="bg-[#A68A64] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 mt-6 md:mt-0">
+          تطبيق البحث
+        </button>
+      </div>
+    </div> -->
+
+    <!-- بطاقات الفعاليات -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg border border-[#EDE4DA]">
+        <img src="images/blog/1.jpg" alt="فعالية 1" class="w-full h-56 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="text-xl font-semibold text-[#3D3D3D] mb-3">حفل موسيقي لتلاميذ بيت العود</h3>
+          <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+            ٣٠ مايو
+          </p>
+          <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+            انضموا إلينا في حفل موسيقي مميز يقدمه تلاميذ بيت العود، حيث سيعزفون أجمل المقطوعات على آلة العود والكمان.
+          </p>
+          <p class="text-[#A68A64] text-sm font-semibold mb-4 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
+            المركز: جدة
+          </p>
+          <div class="flex justify-end space-x-4 space-x-reverse items-center">
+            <a href="#" class="text-[#A68A64] text-sm font-semibold px-4 py-2 rounded-md border border-[#A68A64] hover:bg-[#A68A64] hover:text-white transition duration-300 ease-in-out">
+              اقرأ المزيد
+            </a>
+            <a href="#" class="bg-[#A68A64] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 ease-in-out">
+              حضور
+            </a>
           </div>
         </div>
       </div>
-      <div class="mt-12">
-        <a href="#" class="bg-[#A68A64] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#7A6A4F] transition duration-300 animate-pulse">
-          استعراض المزيد
-        </a>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg border border-[#EDE4DA]">
+        <img src="images/blog/2.jpg" alt="فعالية 2" class="w-full h-56 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="text-xl font-semibold text-[#3D3D3D] mb-3">ورشة عمل حول الإيقاع الشرقي</h3>
+          <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+            ٣٠ مايو
+          </p>
+          <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+            ورشة عمل مكثفة لتعليم أساسيات الإيقاع الشرقي بقيادة أحد أبرز المدربين في بيت العود.
+          </p>
+          <p class="text-[#A68A64] text-sm font-semibold mb-4 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
+            المركز: الرياض
+          </p>
+          <div class="flex justify-end space-x-4 space-x-reverse items-center">
+            <a href="#" class="text-[#A68A64] text-sm font-semibold px-4 py-2 rounded-md border border-[#A68A64] hover:bg-[#A68A64] hover:text-white transition duration-300 ease-in-out">
+              اقرأ المزيد
+            </a>
+            <a href="#" class="bg-[#A68A64] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 ease-in-out">
+              حضور
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg border border-[#EDE4DA]">
+        <img src="images/blog/3.jpg" alt="فعالية 3" class="w-full h-56 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="text-xl font-semibold text-[#3D3D3D] mb-3">معرض الآلات الموسيقية التراثية</h3>
+          <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+            ٣١ مايو
+          </p>
+          <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+            زوروا معرضنا السنوي للآلات الموسيقية التراثية وتعرفوا على تاريخ العود والقانون.
+          </p>
+          <p class="text-[#A68A64] text-sm font-semibold mb-4 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
+            المركز: الخبر
+          </p>
+          <div class="flex justify-end space-x-4 space-x-reverse items-center">
+            <a href="#" class="text-[#A68A64] text-sm font-semibold px-4 py-2 rounded-md border border-[#A68A64] hover:bg-[#A68A64] hover:text-white transition duration-300 ease-in-out">
+              اقرأ المزيد
+            </a>
+            <a href="#" class="bg-[#A68A64] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 ease-in-out">
+              حضور
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="mt-12">
+      <a href="/events.html" class="bg-[#A68A64] text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300">
+        استعراض المزيد
+      </a>
+    </div>
+  </div>
+</section>
 
   <!-- قسم آراء الطلاب -->
-  <section class="py-16 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5]">
+  <!-- <section class="py-16 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5]">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-12 animate-slide-up">آراء الطلاب</h2>
       <div class="swiper testimonialsSwiper">
@@ -433,7 +525,7 @@
         <div class="swiper-button-prev text-[#A68A64]"></div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="py-20 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5]">
     <div class="container mx-auto px-4 flex items-center justify-between flex-col md:flex-row gap-8">
@@ -454,79 +546,269 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gradient-to-b from-[#A68A64] to-[#7A6A4F] text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- الشعار -->
-        <div class="flex flex-col items-center md:items-start">
-          <a href="#" class="mb-4">
-            <img src="images/newlogo.avif" alt="شعار بيت العود" class="h-20 w-auto object-contain animate-fade-in">
-          </a>
-          <p class="text-sm text-center md:text-right text-white">
-            بيت العود - مركز متخصص في تعليم العزف على آلة العود والآلات الموسيقية الشرقية.
-          </p>
-          <!-- روابط السوشل ميديا -->
-          <div class="flex space-x-4 space-x-reverse mt-4">
-            <a href="#" class="hover:text-[#EDE4DA] transition">
-              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-            </a>
-            <a href="#" class="hover:text-[#EDE4DA] transition">
-              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
-            </a>
-            <a href="#" class="hover:text-[#EDE4DA] transition">
-              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-            </a>
-            <a href="#" class="hover:text-[#EDE4DA] transition">
-              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
-            </a>
+<!-- قسم المدرسون -->
+<!-- قسم المدرسون -->
+<section class="py-16 bg-gradient-to-b from-[#F5F5F5] to-[#EDE4DA] relative">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-12 animate-slide-up relative inline-block">
+      المدرسون
+      <span class="absolute -bottom-2 right-0 w-16 h-1 bg-[#A68A64] rounded-full"></span>
+    </h2>
+    <div class="swiper teachersSwiper">
+      <div class="swiper-wrapper">
+        <!-- مدرس 1 -->
+        <div class="swiper-slide  border-b-2 border-[#A68A64] rounded-lg">
+          <div class="transform transition duration-500 hover:scale-105 animate-fade-in mx-auto max-w-xs">
+            <div class="relative w-full h-64">
+              <img src="images/teachers/1.jpg" alt="مدرس 1" class="w-full h-full rounded-xl object-cover shadow-md">
+            </div>
+            <div class="pt-4">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1">أحمد السيد</h3>
+              <p class="text-[#6B7280] text-sm font-medium">مدرس العود</p>
+            </div>
           </div>
         </div>
-
-        <!-- روابط سريعة -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4 border-b-2 border-white pb-2 text-center md:text-right">روابط سريعة</h3>
-          <ul class="space-y-2 text-center md:text-right">
-            <li><a href="#" class="hover:text-[#EDE4DA] transition">الصفحة الرئيسية</a></li>
-            <li><a href="#" class="hover:text-[#EDE4DA] transition">من نحن</a></li>
-            <li><a href="#" class="hover:text-[#EDE4DA] transition">تواصل معنا</a></li>
-            <li><a href="#" class="hover:text-[#EDE4DA] transition">التقديم على البرامج</a></li>
-          </ul>
+        <!-- مدرس 2 -->
+        <div class="swiper-slide  border-b-2 border-[#A68A64] rounded-lg">
+          <div class="transform transition duration-500 hover:scale-105 animate-fade-in delay-100 mx-auto max-w-xs">
+            <div class="relative w-full h-64">
+              <img src="images/teachers/2.jpg" alt="مدرس 2" class="w-full h-full rounded-xl object-cover shadow-md">
+            </div>
+            <div class="pt-4">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1"> ناجي ناجي</h3>
+              <p class="text-[#6B7280] text-sm font-medium">مدرس القانون</p>
+            </div>
+          </div>
         </div>
-
-        <!-- تواصل معنا -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4 border-b-2 border-white pb-2 text-center md:text-right">تواصل معنا</h3>
-          <ul class="space-y-2 text-center md:text-right">
-            <li><a href="mailto:info@baitaloud.com" class="hover:text-[#EDE4DA] transition">info@baitaloud.com</a></li>
-            <li><a href="tel:+966123456789" class="hover:text-[#EDE4DA] transition">+966 123 456 789</a></li>
-            <li class="text-sm text-white">الرياض، المملكة العربية السعودية</li>
-          </ul>
+        <!-- مدرس 3 -->
+        <div class="swiper-slide  border-b-2 border-[#A68A64] rounded-lg">
+          <div class="transform transition duration-500 hover:scale-105 animate-fade-in delay-200 mx-auto max-w-xs">
+            <div class="relative w-full h-64">
+              <img src="images/teachers/3.jpg" alt="مدرس 3" class="w-full h-full rounded-xl object-cover shadow-md">
+            </div>
+            <div class="pt-4">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1">خالد العمري</h3>
+              <p class="text-[#6B7280] text-sm font-medium">مدرس الكمان</p>
+            </div>
+          </div>
         </div>
-
-        <!-- البرامج والمدرسون -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4 border-b-2 border-white pb-2 text-center md:text-right">البرامج والمدرسون</h3>
-          <ul class="space-y-2 text-center md:text-right">
-            <li><a href="#" class="hover:text-[#EDE4DA] transition">برامج العود</a></li>
-            <li><a href="#" class="hover:text-[#EDE4DA] transition">برامج القانون</a></li>
-            <li><a href="#" class="hover:text-[#EDE4DA] transition">المدرسون</a></li>
-            <li><a href="#" class="hover:text-[#EDE4DA] transition">فريق العمل الإداري</a></li>
-          </ul>
+        <!-- مدرس 4 -->
+        <div class="swiper-slide  border-b-2 border-[#A68A64] rounded-lg">
+          <div class="transform transition duration-500 hover:scale-105 animate-fade-in delay-300 mx-auto max-w-xs">
+            <div class="relative w-full h-64">
+              <img src="images/teachers/4.jpg" alt="مدرس 4" class="w-full h-full rounded-xl object-cover shadow-md">
+            </div>
+            <div class="pt-4">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1"> نهاد السيد غازي</h3>
+              <p class="text-[#6B7280] text-sm font-medium">مدرس الإيقاع</p>
+            </div>
+          </div>
+        </div>
+        <!-- مدرس 5 -->
+        <div class="swiper-slide  border-b-2 border-[#A68A64] rounded-lg">
+          <div class="transform transition duration-500 hover:scale-105 animate-fade-in delay-400 mx-auto max-w-xs">
+            <div class="relative w-full h-64">
+              <img src="images/teachers/5.jpg" alt="مدرس 5" class="w-full h-full rounded-xl object-cover shadow-md">
+            </div>
+            <div class="pt-4">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1">يوسف عبدالله</h3>
+              <p class="text-[#6B7280] text-sm font-medium">مدرس العود</p>
+            </div>
+          </div>
+        </div>
+        <!-- مدرس 6 -->
+        <div class="swiper-slide border-b-2 border-[#A68A64] rounded-lg">
+          <div class="transform transition duration-500   hover:scale-105 animate-fade-in delay-500 mx-auto max-w-xs">
+            <div class="relative w-full h-64">
+              <img src="images/teachers/6.jpg" alt="مدرس 6" class="w-full h-full rounded-xl  object-cover shadow-md">
+            </div>
+            <div class="pt-4">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1"> هاني البدري</h3>
+              <p class="text-[#6B7280] text-sm font-medium">مدرس الإيقاع</p>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="swiper-button-next text-[#A68A64]"></div>
+      <div class="swiper-button-prev text-[#A68A64]"></div>
+    </div>
+  </div>
+</section>
 
-      <!-- إزالة السوشل ميديا وإبقاء شعار وزارة الثقافة (إذا أردت إعادته) -->
-      <div class="mt-8 pt-8 border-t border-white/30 flex flex-col md:flex-row items-center justify-between">
-        <!-- <a href="#" class="flex items-center space-x-2 space-x-reverse">
-          <span class="text-sm text-[#EDE4DA]">برعاية</span>
-          <img src="images/logo2.svg" alt="شعار وزارة الثقافة" class="h-10 w-auto object-contain animate-fade-in">
-        </a> -->
+<!-- قسم فريق العمل الإداري -->
+<section class="py-16 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5] relative">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#A68A64] mb-12 animate-slide-up relative inline-block">
+      فريق العمل الإداري
+      <span class="absolute -bottom-2 right-0 w-16 h-1 bg-[#A68A64] rounded-full"></span>
+    </h2>
+    <div class="swiper adminSwiper">
+      <div class="swiper-wrapper">
+        <!-- عضو 1 -->
+        <div class="swiper-slide">
+          <div class="flex flex-col items-center w-full mx-auto max-w-sm">
+            <!-- الصورة مع إطار دائري ذهبي -->
+            <div class="relative w-48 h-48 mb-4">
+              <img src="images/team/2.jpg" alt="عضو 1" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64] shadow-lg">
+              <!-- الإطار العمودي الزخرفي -->
+              <!-- <div class="absolute top-0 -right-2 w-1 h-48 bg-[#A68A64] opacity-50"></div> -->
+            </div>
+            <!-- المستطيل الأنيق لعرض التفاصيل -->
+            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs transform transition duration-500 hover:scale-105">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1">سعد المحمد</h3>
+              <p class="text-[#6B7280] text-sm font-medium mb-4">مدير الإدارة</p>
+              <!-- أيقونات السوشل ميديا -->
+              <div class="flex justify-center space-x-4 space-x-reverse">
+                <a href="#" class="text-[#A68A64] hover:text-[#7A6A4F] transition">
+                  <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                </a>
+                <a href="#" class="text-[#A68A64] hover:text-[#7A6A4F] transition">
+                  <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- عضو 2 -->
+        <div class="swiper-slide">
+          <div class="flex flex-col items-center w-full mx-auto max-w-sm">
+            <div class="relative w-48 h-48 mb-4">
+              <img src="images/team/3.jpg" alt="عضو 2" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64] shadow-lg">
+              <!-- <div class="absolute top-0 -right-2 w-1 h-48 bg-[#A68A64] opacity-50"></div> -->
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs transform transition duration-500 hover:scale-105">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1">كوثر محمد</h3>
+              <p class="text-[#6B7280] text-sm font-medium mb-4">مسؤولة التسجيل</p>
+              <div class="flex justify-center space-x-4 space-x-reverse">
+                <a href="#" class="text-[#A68A64] hover:text-[#7A6A4F] transition">
+                  <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                </a>
+                <a href="#" class="text-[#A68A64] hover:text-[#7A6A4F] transition">
+                  <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- عضو 3 -->
+        <div class="swiper-slide">
+          <div class="flex flex-col items-center w-full mx-auto max-w-sm">
+            <div class="relative w-48 h-48 mb-4">
+              <img src="images/team/1.jpg" alt="عضو 3" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64] shadow-lg">
+              <!-- <div class="absolute top-0 -right-2 w-1 h-48 bg-[#A68A64] opacity-50"></div> -->
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs transform transition duration-500 hover:scale-105">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1">عبدالله الراشد</h3>
+              <p class="text-[#6B7280] text-sm font-medium mb-4">منسق الفعاليات</p>
+              <div class="flex justify-center space-x-4 space-x-reverse">
+                <a href="#" class="text-[#A68A64] hover:text-[#7A6A4F] transition">
+                  <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                </a>
+                <a href="#" class="text-[#A68A64] hover:text-[#7A6A4F] transition">
+                  <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- عضو 4 -->
+        <div class="swiper-slide">
+          <div class="flex flex-col items-center w-full mx-auto max-w-sm">
+            <div class="relative w-48 h-48 mb-4">
+              <img src="images/team/4.jpg" alt="عضو 4" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64] shadow-lg">
+              <!-- <div class="absolute top-0 -right-2 w-1 h-48 bg-[#A68A64] opacity-50"></div> -->
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs transform transition duration-500 hover:scale-105">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1">عبدالله الراشد</h3>
+              <p class="text-[#6B7280] text-sm font-medium mb-4">منسق الفعاليات</p>
+              <div class="flex justify-center space-x-4 space-x-reverse">
+                <a href="#" class="text-[#A68A64] hover:text-[#7A6A4F] transition">
+                  <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                </a>
+                <a href="#" class="text-[#A68A64] hover:text-[#7A6A4F] transition">
+                  <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- عضو 5 -->
+        <div class="swiper-slide">
+          <div class="flex flex-col items-center w-full mx-auto max-w-sm">
+            <div class="relative w-48 h-48 mb-4">
+              <img src="images/team/5.jpg" alt="عضو 5" class="w-full h-full rounded-full object-cover border-4 border-[#A68A64] shadow-lg">
+             
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs transform transition duration-500 hover:scale-105">
+              <h3 class="text-xl font-semibold text-[#A68A64] mb-1">عبدالله الراشد</h3>
+              <p class="text-[#6B7280] text-sm font-medium mb-4">منسق الفعاليات</p>
+              <div class="flex justify-center space-x-4 space-x-reverse">
+                <a href="#" class="text-[#A68A64] hover:text-[#7A6A4F] transition">
+                  <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                </a>
+                <a href="#" class="text-[#A68A64] hover:text-[#7A6A4F] transition">
+                  <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="mt-6 text-center text-sm text-[#EDE4DA]">
-        <p>© 2025 بيت العود. جميع الحقوق محفوظة.</p>
+      <div class="swiper-button-next text-[#A68A64]"></div>
+      <div class="swiper-button-prev text-[#A68A64]"></div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+ <footer class="relative bg-gradient-to-b from-[#A68A64] to-[#7A6A4F] text-white py-6">
+  <!-- خلفية النوتات الموسيقية -->
+  <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('images/footer.png');"></div>
+  
+  <div class="relative container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- الشعار والوصف -->
+      <div class="flex flex-col items-center md:items-start text-center md:text-right">
+        <a href="#" class="mb-3">
+          <img src="images/newlogo.avif" alt="شعار بيت العود" class="h-14 w-auto object-contain animate-fade-in">
+        </a>
+        <p class="text-xs text-white leading-relaxed max-w-xs">
+          بيت العود - مركز متخصص في تعليم العزف على آلة العود والآلات الموسيقية الشرقية.
+        </p>
+      </div>
+
+      <!-- معلومات التواصل وأيقونات السوشل ميديا -->
+      <div class="flex flex-col items-center md:items-start text-right md:text-right">
+        <!-- معلومات التواصل -->
+        <h3 class="text-base font-semibold mb-2 border-b border-[#EDE4DA] pb-1">تواصل معنا</h3>
+        <ul class="space-y-1 text-sm">
+          <li><a href="mailto:info@baitaloud.com" class="hover:text-[#EDE4DA] transition">info@baitaloud.com</a></li>
+          <li><a href="tel:+966123456789" class="hover:text-[#EDE4DA] transition">+966 123 456 789</a></li>
+          <li class="text-white">الرياض، المملكة العربية السعودية</li>
+        </ul>
+        <!-- أيقونات السوشل ميديا -->
+        <div class="flex space-x-4 space-x-reverse mt-4">
+          <a href="#" class="hover:text-[#EDE4DA] transition">
+            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+          </a>
+          <a href="#" class="hover:text-[#EDE4DA] transition">
+            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
+          </a>
+          <a href="#" class="hover:text-[#EDE4DA] transition">
+            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+          </a>
+          <a href="#" class="hover:text-[#EDE4DA] transition">
+            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
+
+    <!-- حقوق النشر -->
+    <div class="mt-4 pt-4 border-t border-[#EDE4DA]/30 text-center text-xs text-[#EDE4DA]">
+      <p>© 2025 بيت العود. جميع الحقوق محفوظة.</p>
+    </div>
+  </div>
 </footer>
 
     <!-- Go to Top Button -->
@@ -591,6 +873,36 @@
           behavior: 'smooth'
         });
       });
+
+        new Swiper(".teachersSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 5 },
+        },
+        });
+
+        new Swiper(".adminSwiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 4 },
+  },
+});
+
+
     });
   </script>
 </body>

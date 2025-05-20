@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بيت العود - The Oud House</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <style>
+  @font-face {
+    font-family: 'FF Shamel';
+    src: url('fonts/FF Shamel Family Sans One Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'FF Shamel', sans-serif;
+    background-color: #F5F5F5;
+    color: #3D3D3D;
+  }
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 1s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+
+  /* Go to Top Button Styles */
+  #go-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #A68A64;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+  }
+
+  #go-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #go-to-top:hover {
+    background-color: #7A6A4F;
+  }
+
+  #go-to-top svg {
+    width: 24px;
+    height: 24px;
+  }
+  .apply-button {
+  background-color: #ffffff;
+  color: #A68A64;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+.apply-button:hover {
+  background-color: #e6e6e6;
+  color: #7A6A4F;
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body class="text-[#3D3D3D]">
+  <!-- Navbar -->
+ <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-start h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="#">
+            <img src="images/newlogo.avif" alt="شعار بيت العود" class="h-16 w-auto object-contain animate-fade-in">
+          </a>
+        </div>
+
+        <!-- Navigation -->
+       <nav class="hidden md:flex space-x-6 space-x-reverse text-sm font-semibold mr-64">
+  <a href="/index2.html" class="hover:text-[#A68A64] text-[#3D3D3D] transition   pb-1">الصفحة الرئيسية</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">البرامج / الآلات الموسيقية</a>
+  <!-- <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">المدرسون</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">فريق العمل الإداري</a> -->
+  <a href="/events.html" class="hover:text-[#A68A64] text-[#3D3D3D] transition border-[#A68A64] border-b-2">الاحداث </a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">من نحن</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">تواصل معنا</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">التقديم على البرامج</a>
+  <a href="#" class="hover:text-[#A68A64] text-[#3D3D3D] transition">
+  EN 
+  
+  <svg class="text-[#3D3D3D] w-4 h-4 inline-block align-middle ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64l-185.3 0c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64l185.3 0c2.2 20.4 3.3 41.8 3.3 64zm28.8-64l123.1 0c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64l-123.1 0c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32l-116.7 0c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0l-176.6 0c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0L18.6 160C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192l123.1 0c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64L8.1 320C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6l176.6 0c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352l116.7 0zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6l116.7 0z"/></svg>
+</a>
+</nav>
+
+        <!-- Mobile menu icon -->
+        <div class="md:hidden">
+          <button id="mobile-menu-toggle" class="text-[#A68A64] focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+   <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white text-sm">
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition inline-block border-b-2 border-[#A68A64] pb-1">الصفحة الرئيسية</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">البرامج / الآلات الموسيقية</a>
+  <!-- <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">المدرسون</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">فريق العمل الإداري</a> -->
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">من نحن</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">تواصل معنا</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">التقديم على البرامج</a>
+  <a href="#" class="block py-2 text-[#3D3D3D] hover:text-[#A68A64] transition">English</a>
+</div>
+  </header>
+
+  <!-- Main Section -->
+ <main class="relative h-screen overflow-hidden">
+  <!-- صورة الخلفية -->
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/event.jpg');"></div>
+  <!-- طبقة خلفية نصف شفافة لتحسين رؤية النص -->
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  <!-- نص مميز -->
+  <div class="relative flex items-center justify-center h-full">
+    <div class="text-center animate-slide-up">
+      <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg tracking-wide">
+        الأحداث والفعاليات
+      </h1>
+      <p class="text-lg md:text-xl text-white mt-4 opacity-90 animate-fade-in">
+        اكتشف أحدث الفعاليات الموسيقية والثقافية في بيت العود
+      </p>
+    </div>
+  </div>
+</main>
+
+ 
+
+
+  
+
+  <!-- قسم الأخبار والفعاليات -->
+<!-- قسم الأخبار والفعاليات -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <!-- <h2 class="text-3xl md:text-4xl font-bold text-[#3D3D3D] mb-12 animate-slide-up">الأخبار والفعاليات</h2> -->
+
+    <!-- فلاتر التصفية -->
+   <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-16">
+  <div class="w-full md:w-1/4">
+    <div class="relative">
+      <label class="absolute -top-6 right-0 text-sm font-semibold text-[#3D3D3D]">تصفية حسب النوع</label>
+      <select class="w-full p-3 bg-white border border-[#A68A64] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A68A64] transition duration-300 text-right appearance-none">
+        <option value="">اختر</option>
+        <option value="event">حدث</option>
+        <option value="open-day">يوم مفتوح</option>
+      </select>
+      <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#A68A64]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path d="M182.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128z"/>
+      </svg>
+    </div>
+  </div>
+  <div class="w-full md:w-1/4">
+    <div class="relative">
+      <label class="absolute -top-6 right-0 text-sm font-semibold text-[#3D3D3D]">تصفية حسب المركز</label>
+      <select class="w-full p-3 bg-white border border-[#A68A64] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A68A64] transition duration-300 text-right appearance-none">
+        <option value="">اختر</option>
+        <option value="alkhobar">الخبر</option>
+        <option value="riyadh">الرياض</option>
+        <option value="jeddah">جدة</option>
+      </select>
+      <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#A68A64]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path d="M182.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128z"/>
+      </svg>
+    </div>
+  </div>
+  <div class="w-full md:w-auto">
+    <button class="bg-[#A68A64] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 mt-6 md:mt-0">
+      تطبيق البحث
+    </button>
+  </div>
+</div>
+
+    <!-- بطاقات الفعاليات -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- بطاقة 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg border border-[#EDE4DA]">
+        <img src="images/blog/1.jpg" alt="فعالية 1" class="w-full h-56 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="text-xl font-semibold text-[#3D3D3D] mb-3">حفل موسيقي لتلاميذ بيت العود</h3>
+          <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+            ٣٠ مايو
+          </p>
+          <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+            انضموا إلينا في حفل موسيقي مميز يقدمه تلاميذ بيت العود،  سيعزفون أجمل المقطوعات على آلة العود .
+          </p>
+          <p class="text-[#A68A64] text-sm font-semibold mb-4 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
+            المركز: جدة
+          </p>
+            <div class="flex justify-end space-x-4 space-x-reverse items-center">
+            <a href="#" class="text-[#A68A64] text-sm font-semibold px-4 py-2 rounded-md border border-[#A68A64] hover:bg-[#A68A64] hover:text-white transition duration-300 ease-in-out">
+            اقرأ المزيد
+            </a>
+            <a href="#" class="bg-[#A68A64] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 ease-in-out">
+            حضور
+            </a>
+            </div>
+        </div>
+      </div>
+      <!-- بطاقة 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg border border-[#EDE4DA]">
+        <img src="images/blog/2.jpg" alt="فعالية 2" class="w-full h-56 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="text-xl font-semibold text-[#3D3D3D] mb-3">ورشة عمل حول الإيقاع الشرقي</h3>
+          <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+            ٣٠ مايو
+          </p>
+          <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+            ورشة عمل مكثفة لتعليم أساسيات الإيقاع الشرقي بقيادة أحد أبرز المدربين في بيت العود.
+          </p>
+          <p class="text-[#A68A64] text-sm font-semibold mb-4 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
+            المركز: الرياض
+          </p>
+         <div class="flex justify-end space-x-4 space-x-reverse items-center">
+            <a href="#" class="text-[#A68A64] text-sm font-semibold px-4 py-2 rounded-md border border-[#A68A64] hover:bg-[#A68A64] hover:text-white transition duration-300 ease-in-out">
+            اقرأ المزيد
+            </a>
+            <a href="#" class="bg-[#A68A64] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 ease-in-out">
+            حضور
+            </a>
+            </div>
+        </div>
+      </div>
+      <!-- بطاقة 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg border border-[#EDE4DA]">
+        <img src="images/blog/3.jpg" alt="فعالية 3" class="w-full h-56 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="text-xl font-semibold text-[#3D3D3D] mb-3">معرض الآلات الموسيقية التراثية</h3>
+          <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+            ٣١ مايو
+          </p>
+          <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+            زوروا معرضنا السنوي للآلات الموسيقية التراثية وتعرفوا على تاريخ العود والقانون.
+          </p>
+          <p class="text-[#A68A64] text-sm font-semibold mb-4 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
+            المركز: الخبر
+          </p>
+          <div class="flex justify-end space-x-4 space-x-reverse items-center">
+            <a href="#" class="text-[#A68A64] text-sm font-semibold px-4 py-2 rounded-md border border-[#A68A64] hover:bg-[#A68A64] hover:text-white transition duration-300 ease-in-out">
+            اقرأ المزيد
+            </a>
+            <a href="#" class="bg-[#A68A64] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 ease-in-out">
+            حضور
+            </a>
+            </div>
+        </div>
+      </div>
+
+       <!-- بطاقة 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg border border-[#EDE4DA]">
+        <img src="images/blog/1.jpg" alt="فعالية 1" class="w-full h-56 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="text-xl font-semibold text-[#3D3D3D] mb-3">حفل موسيقي لتلاميذ بيت العود</h3>
+          <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+            ٣٠ مايو
+          </p>
+          <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+            انضموا إلينا في حفل موسيقي مميز يقدمه تلاميذ بيت العود،  سيعزفون أجمل المقطوعات على آلة العود .
+          </p>
+          <p class="text-[#A68A64] text-sm font-semibold mb-4 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
+            المركز: جدة
+          </p>
+         <div class="flex justify-end space-x-4 space-x-reverse items-center">
+            <a href="#" class="text-[#A68A64] text-sm font-semibold px-4 py-2 rounded-md border border-[#A68A64] hover:bg-[#A68A64] hover:text-white transition duration-300 ease-in-out">
+            اقرأ المزيد
+            </a>
+            <a href="#" class="bg-[#A68A64] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 ease-in-out">
+            حضور
+            </a>
+            </div>
+        </div>
+      </div>
+      <!-- بطاقة 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg border border-[#EDE4DA]">
+        <img src="images/blog/2.jpg" alt="فعالية 2" class="w-full h-56 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="text-xl font-semibold text-[#3D3D3D] mb-3">ورشة عمل حول الإيقاع الشرقي</h3>
+          <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+            ٣٠ مايو
+          </p>
+          <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+            ورشة عمل مكثفة لتعليم أساسيات الإيقاع الشرقي بقيادة أحد أبرز المدربين في بيت العود.
+          </p>
+          <p class="text-[#A68A64] text-sm font-semibold mb-4 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
+            المركز: الرياض
+          </p>
+          <div class="flex justify-end space-x-4 space-x-reverse items-center">
+            <a href="#" class="text-[#A68A64] text-sm font-semibold px-4 py-2 rounded-md border border-[#A68A64] hover:bg-[#A68A64] hover:text-white transition duration-300 ease-in-out">
+            اقرأ المزيد
+            </a>
+            <a href="#" class="bg-[#A68A64] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 ease-in-out">
+            حضور
+            </a>
+            </div>
+        </div>
+      </div>
+      <!-- بطاقة 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg border border-[#EDE4DA]">
+        <img src="images/blog/3.jpg" alt="فعالية 3" class="w-full h-56 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="text-xl font-semibold text-[#3D3D3D] mb-3">معرض الآلات الموسيقية التراثية</h3>
+          <p class="text-[#A68A64] text-sm font-semibold mb-2 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM64 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V304zm128 0c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H336c-8.8 0-16-7.2-16-16V304z"/></svg>
+            ٣١ مايو
+          </p>
+          <p class="text-[#6B7280] text-sm leading-relaxed mb-4">
+            زوروا معرضنا السنوي للآلات الموسيقية التراثية وتعرفوا على تاريخ العود والقانون.
+          </p>
+          <p class="text-[#A68A64] text-sm font-semibold mb-4 flex items-center justify-start">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
+            المركز: الخبر
+          </p>
+          <div class="flex justify-end space-x-4 space-x-reverse items-center">
+            <a href="#" class="text-[#A68A64] text-sm font-semibold px-4 py-2 rounded-md border border-[#A68A64] hover:bg-[#A68A64] hover:text-white transition duration-300 ease-in-out">
+            اقرأ المزيد
+            </a>
+            <a href="#" class="bg-[#A68A64] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#7A6A4F] hover:shadow-md transition duration-300 ease-in-out">
+            حضور
+            </a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12">
+      <a href="/events.html" class="bg-[#A68A64] text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-[#7A6A4F] transition duration-300">
+        استعراض المزيد
+      </a>
+    </div>
+  </div>
+</section>
+
+ 
+  <section class="py-20 bg-gradient-to-b from-[#EDE4DA] to-[#D3C8B5]">
+    <div class="container mx-auto px-4 flex items-center justify-between flex-col md:flex-row gap-8">
+      <div class="text-center md:text-right w-full md:w-1/2 animate-slide-up">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#A68A64] mb-4">  اكتشف برامجنا</h2>
+        <p class="text-[#6B7280] text-lg leading-relaxed mb-6">
+
+          انضم إلى بيت العود لتتعلم العزف على آلات الشرقية بأساليب احترافية من المعلمين المتميزين، واستمتع بتجربة تعليمية فريدة تحافظ على التراث الموسيقي.
+
+        </p>
+        <a href="#" class="inline-block bg-[#A68A64] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#7A6A4F] transition animate-fade-in">
+         المزيد
+        </a>
+      </div>
+      <div class="w-full md:w-1/2">
+        <img src="images/register.jpg" alt="قاعة التدريب" class="w-full h-auto rounded-lg shadow-lg animate-fade-in">
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Footer -->
+ <footer class="relative bg-gradient-to-b from-[#A68A64] to-[#7A6A4F] text-white py-6">
+  <!-- خلفية النوتات الموسيقية -->
+  <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('images/footer.png');"></div>
+  
+  <div class="relative container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- الشعار والوصف -->
+      <div class="flex flex-col items-center md:items-start text-center md:text-right">
+        <a href="#" class="mb-3">
+          <img src="images/newlogo.avif" alt="شعار بيت العود" class="h-14 w-auto object-contain animate-fade-in">
+        </a>
+        <p class="text-xs text-white leading-relaxed max-w-xs">
+          بيت العود - مركز متخصص في تعليم العزف على آلة العود والآلات الموسيقية الشرقية.
+        </p>
+      </div>
+
+      <!-- معلومات التواصل وأيقونات السوشل ميديا -->
+      <div class="flex flex-col items-center md:items-start text-right md:text-right">
+        <!-- معلومات التواصل -->
+        <h3 class="text-base font-semibold mb-2 border-b border-[#EDE4DA] pb-1">تواصل معنا</h3>
+        <ul class="space-y-1 text-sm">
+          <li><a href="mailto:info@baitaloud.com" class="hover:text-[#EDE4DA] transition">info@baitaloud.com</a></li>
+          <li><a href="tel:+966123456789" class="hover:text-[#EDE4DA] transition">+966 123 456 789</a></li>
+          <li class="text-white">الرياض، المملكة العربية السعودية</li>
+        </ul>
+        <!-- أيقونات السوشل ميديا -->
+        <div class="flex space-x-4 space-x-reverse mt-4">
+          <a href="#" class="hover:text-[#EDE4DA] transition">
+            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+          </a>
+          <a href="#" class="hover:text-[#EDE4DA] transition">
+            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
+          </a>
+          <a href="#" class="hover:text-[#EDE4DA] transition">
+            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+          </a>
+          <a href="#" class="hover:text-[#EDE4DA] transition">
+            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- حقوق النشر -->
+    <div class="mt-4 pt-4 border-t border-[#EDE4DA]/30 text-center text-xs text-[#EDE4DA]">
+      <p>© 2025 بيت العود. جميع الحقوق محفوظة.</p>
+    </div>
+  </div>
+</footer>
+
+    <!-- Go to Top Button -->
+  <button id="go-to-top" title="الرجوع إلى الأعلى">
+    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/>
+    </svg>
+  </button>
+
+  <script>
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+   
+   
+    // Go to Top Button Functionality
+      const goToTopBtn = document.getElementById('go-to-top');
+
+      // Show/Hide button on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          goToTopBtn.classList.add('show');
+        } else {
+          goToTopBtn.classList.remove('show');
+        }
+      });
+
+      // Smooth scroll to top on click
+      goToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+   
+  </script>
+</body>
+</html>
